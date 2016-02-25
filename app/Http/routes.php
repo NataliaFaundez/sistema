@@ -39,6 +39,16 @@ Route::group(['middleware' => 'web'], function () {
 	Route::get('/test', function (){
 		return Auth::user();
 	});
+
+	Route::get('/ad', function (){
+		return view('administrador.proyecto');
+	});
+	Route::get('/test', function (){
+		return Auth::user();
+	});
+	Route::get("/plantilla", function () {
+        return view('index');
+    });
 });
 
 
