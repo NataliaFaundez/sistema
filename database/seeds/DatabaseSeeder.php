@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Seeder;
 
+use Illuminate\Database\Eloquent\Model;
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -12,5 +14,14 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
+
+        Model::unguard();//desactiva los datos por lotes
+
+        $this->call(UsersTableSeeder::class);
+       
+       
+
+        Model::reguard(); // activa los datos por lotes
+    
     }
 }

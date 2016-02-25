@@ -34,6 +34,11 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/', 'HomeController@index');
 
     Route::get("/sistema", function () {
-        return view('layout');
+        return view('layout.app');
     });
+	Route::get('/test', function (){
+		return Auth::user();
+	});
 });
+
+
