@@ -10,7 +10,7 @@
                     <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#userMenu">Administrar Proyectos <i class="glyphicon glyphicon-chevron-down"></i></a>
                         <ul class="nav nav-stacked collapse in" id="userMenu">
                             <li class="active"> <a href="/ad"><i class="glyphicon glyphicon-send"></i> Proyectos</a></li> 
-                            <li><a href="#"><i class="glyphicon glyphicon-list-alt"></i> Encuestas</a></li> 
+                            <li><a href="/encuestas"><i class="glyphicon glyphicon-list-alt"></i> Encuestas</a></li> 
                             <li><a href="#"><i class="glyphicon glyphicon-map-marker"></i> Zonas</a></li>                   
                             <li><a href="#"><i class="glyphicon glyphicon-list-alt"></i> Preguntas de encuestas</a></li> 
                         </ul>
@@ -28,6 +28,7 @@
                 
             </div>
             @yield('contento')
+            @yield('encuestas')
         @endif 
 
         @if (Auth::user()->rol == 'sistema')

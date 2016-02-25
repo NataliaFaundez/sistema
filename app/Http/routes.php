@@ -36,19 +36,15 @@ Route::group(['middleware' => 'web'], function () {
     Route::get("/sistema", function () {
         return view('layout.app');
     });
-	Route::get('/test', function (){
-		return Auth::user();
-	});
-
 	Route::get('/ad', function (){
 		return view('administrador.proyecto');
-	});
-	Route::get('/test', function (){
-		return Auth::user();
-	});
+	});	
 	Route::get("/plantilla", function () {
         return view('index');
     });
+    Route::get('/encuestas', function (){
+		return view('administrador.encuestas');
+	});	
 });
 
 

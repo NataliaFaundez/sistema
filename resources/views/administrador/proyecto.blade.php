@@ -1,17 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
 
-<body>
 @extends("home")
 @section('contento')
 	<hr>
 	<div class="col-sm-9">
 		<div class="row">				               	
 				<div class="col-md-6">
-					<form class="form-horizontal" action="" method="POST">
+					<form class="form-horizontal" action="##" method="POST">
 					{{ csrf_field() }}     
 					<div class="panel">
 							<div class="panel panel-default">
@@ -90,6 +84,4 @@
 		</div>
 	</div>
 @endsection
-</body>
-</html>
 
