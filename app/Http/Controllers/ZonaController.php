@@ -18,4 +18,8 @@ class ZonaController extends Controller
     public function Relacionar (){
         return view('administrador.asig_zonas');
     }
+
+    public function Ver(){
+        return view('encuestador.ver_zona');
+    }
 }

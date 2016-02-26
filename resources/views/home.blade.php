@@ -61,11 +61,13 @@
                     <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#userMenu">Administrar <i class="glyphicon glyphicon-chevron-down"></i></a>
                         <ul class="nav nav-stacked collapse in" id="userMenu">
                             <li class="active"> <a href="#"><i class="glyphicon glyphicon-list-alt"></i> Encuestas</a></li>
-                            <li><a href="#"><i class="glyphicon glyphicon-pushpin"></i> Ver Zonas</a></li>
+                            <li><a href="/encuestador/ver_zona"><i class="glyphicon glyphicon-pushpin"></i> Ver Zonas</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
+            @yield('ver_zona')
+            @yield('crear_encuesta')
         @endif
 
         @if (Auth::user()->rol == 'controlador')
@@ -75,11 +77,12 @@
                     <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#userMenu">Administrar <i class="glyphicon glyphicon-chevron-down"></i></a>
                         <ul class="nav nav-stacked collapse in" id="userMenu">
                             <li class="active"> <a href="#"><i class="glyphicon glyphicon-ok-circle"></i> Estados</a></li>
-                            <li><a href="#"><i class="glyphicon glyphicon-pushpin"></i> Ver folios</a></li>    
+                            <li><a href="/controlador/ver_folio"><i class="glyphicon glyphicon-pushpin"></i> Ver folios</a></li>    
                         </ul>
                     </li>
                  </ul>
             </div>
+            @yield('ver_folio')
         @endif
     </div>
 </div>

@@ -56,20 +56,21 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/usuarios','UsuarioController@Index');
 
     //asigna folios a un controlador, aun no teemos un controller donde ingresar
-    Route::get('/administrador/asig_folios', function (){
-        return view('administrador.asig_folios');
-    });
+    Route::get('/administrador/asig_folios', 'ExtraController@AsigFolio');
     //}administrador
     //sistema{
     
     //crea clientes
     Route::get('/clientes','ClienteController@Index');
     
+    //encuestador
+    Route::get('/encuestador/ver_zona', 'ZonaController@Ver');
+    //controlador 
+    Route::get('/controlador/ver_folio', 'ExtraController@VerFolio');
 
     Route::get("/plantilla", function () {
         return view('index');
     });
-     
 });
 
 
