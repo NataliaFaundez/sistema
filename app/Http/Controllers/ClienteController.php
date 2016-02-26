@@ -10,4 +10,8 @@ use App\Http\Controllers\Controller;
 class ClienteController extends Controller
 {
     //
+    public function Index()
+    {
+    	return view('sistema.clientes');
+    }
 }

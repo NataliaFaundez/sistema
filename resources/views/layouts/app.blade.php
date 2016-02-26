@@ -59,7 +59,7 @@
                         <li><a href="{{ url('/register') }}">Register</a></li>
                     @else
                         <li class="dropdown">
-                            <a href="#" class="glyphicon glyphicon-user" data-toggle="dropdown" role="button" aria-expanded="false">
+                            <a href="{{ url('/logout') }}" class="glyphicon glyphicon-user" data-toggle="dropdown" role="button" aria-expanded="false">
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
 

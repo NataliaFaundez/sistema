@@ -36,27 +36,40 @@ Route::group(['middleware' => 'web'], function () {
     Route::get("/sistema", function () {
         return view('layout.app');
     });
+    //administrador{
 	//crea un progrcto, falta guardar editar
     Route::get('/administrador/proyecto', 'ProyectoController@Index');
+
     //crea un modelo de encuesta, falta guardar editar
-    Route::get('/administrador/encuestas','ModeloController@Index');
+    Route::get('/administrador/encuestas','ModeloController@RelacionarModelo');
     //asigna un modelo de encuesta a un usuario, editar eliminar
     Route::get('/administrador/asig_encuesta', 'ModeloController@Relacionar');
+    //esto es para crear las distintas encuestas
+    Route::get('/administrador/crear_encuesta', 'ModeloController@Index');
+
     //crea la zonas
     Route::get('/administrador/zonas','ZonaController@Index');
     //relaciona las zonas con los usuarios
     Route::get('/administrador/asig_zonas', 'ZonaController@Relacionar');
-    //crea usuarios
-    Route::get('/administrador/usuarios','UsuarioController@Index');
+
+    //crea usuarios con cualquier rol
+    Route::get('/usuarios','UsuarioController@Index');
+
+    //asigna folios a un controlador, aun no teemos un controller donde ingresar
+    Route::get('/administrador/asig_folios', function (){
+        return view('administrador.asig_folios');
+    });
+    //}administrador
+    //sistema{
+    
+    //crea clientes
+    Route::get('/clientes','ClienteController@Index');
+    
 
     Route::get("/plantilla", function () {
         return view('index');
     });
      
-    //asigna folios a un controlador, aun no teemos un controller donde ingresar
-    Route::get('/administrador/asig_folios', function (){
-        return view('administrador.asig_folios');
-    });
 });
 
 
