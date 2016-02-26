@@ -9,26 +9,32 @@
                 <ul class="nav nav-stacked">
                     <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#userMenu">Administrar Proyectos <i class="glyphicon glyphicon-chevron-down"></i></a>
                         <ul class="nav nav-stacked collapse in" id="userMenu">
-                            <li class="active"> <a href="/ad"><i class="glyphicon glyphicon-send"></i> Proyectos</a></li> 
-                            <li><a href="/encuestas"><i class="glyphicon glyphicon-list-alt"></i> Encuestas</a></li> 
-                            <li><a href="#"><i class="glyphicon glyphicon-map-marker"></i> Zonas</a></li>                   
+                            <li class="active"> <a href="/administrador/proyecto"><i class="glyphicon glyphicon-send"></i> Proyectos</a></li> 
+                            <li><a href="/administrador/encuestas"><i class="glyphicon glyphicon-list-alt"></i> Encuestas</a></li> 
                             <li><a href="#"><i class="glyphicon glyphicon-list-alt"></i> Preguntas de encuestas</a></li> 
+                            <li><a href="/administrador/asig_encuesta"><i class="glyphicon glyphicon-list-alt"></i> Asignar encuestas</a></li> 
+                            <li><a href="/administrador/zonas"><i class="glyphicon glyphicon-map-marker"></i> Zonas</a></li>                   
                         </ul>
                     </li>
                         <hr>
                       
                     <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#userMenu1">Administrar Usuarios <i class="glyphicon glyphicon-chevron-down"></i></a>
                         <ul class="nav nav-stacked collapse in" id="userMenu1">
-                            <li><a href="#"><i class="glyphicon glyphicon-user"></i> Usuarios</a></li>
-                            <li><a href="#"><i class="glyphicon glyphicon-map-marker"></i> Asignar Zonas</a></li>
-                            <li><a href="#"><i class="glyphicon glyphicon-pushpin"></i> Asignar Folios</a></li>
+                            <li><a href="/administrador/usuarios"><i class="glyphicon glyphicon-user"></i> Usuarios</a></li>
+                            <li><a href="/administrador/asig_zonas"><i class="glyphicon glyphicon-map-marker"></i> Asignar Zonas</a></li>
+                            <li><a href="/administrador/asig_folios"><i class="glyphicon glyphicon-pushpin"></i> Asignar Folios</a></li>
                         </ul>
                     </li>
                 </ul>
                 
             </div>
-            @yield('contento')
+            @yield('proyecto')
             @yield('encuestas')
+            @yield('zonas')
+            @yield('usuarios')
+            @yield('asig_encuesta')
+            @yield('asig_zonas')
+            @yield('asig_folios')
         @endif 
 
         @if (Auth::user()->rol == 'sistema')

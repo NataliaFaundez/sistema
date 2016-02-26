@@ -36,15 +36,27 @@ Route::group(['middleware' => 'web'], function () {
     Route::get("/sistema", function () {
         return view('layout.app');
     });
-	Route::get('/ad', function (){
-		return view('administrador.proyecto');
-	});	
-	Route::get("/plantilla", function () {
+	//crea un progrcto, falta guardar editar
+    Route::get('/administrador/proyecto', 'ProyectoController@Index');
+    //crea un modelo de encuesta, falta guardar editar
+    Route::get('/administrador/encuestas','ModeloController@Index');
+    //asigna un modelo de encuesta a un usuario, editar eliminar
+    Route::get('/administrador/asig_encuesta', 'ModeloController@Relacionar');
+    //crea la zonas
+    Route::get('/administrador/zonas','ZonaController@Index');
+    //relaciona las zonas con los usuarios
+    Route::get('/administrador/asig_zonas', 'ZonaController@Relacionar');
+    //crea usuarios
+    Route::get('/administrador/usuarios','UsuarioController@Index');
+
+    Route::get("/plantilla", function () {
         return view('index');
     });
-    Route::get('/encuestas', function (){
-		return view('administrador.encuestas');
-	});	
+     
+    //asigna folios a un controlador, aun no teemos un controller donde ingresar
+    Route::get('/administrador/asig_folios', function (){
+        return view('administrador.asig_folios');
+    });
 });
 
 

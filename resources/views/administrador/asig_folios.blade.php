@@ -1,6 +1,5 @@
-
 @extends("home")
-@section('proyecto')
+@section('asig_folios')
 <hr>
 <div class="col-sm-9">
 	<div class="row">				               	
@@ -12,26 +11,28 @@
 						<div class="panel-heading">
 							<div class="panel-title">
 								<i class="glyphicon glyphicon-wrench pull-right"></i>
-								<h4>Agregar Proyecto</h4>
+								<h4>Asignar folios</h4>
 							</div>
 						</div>
 			
 						<div class="panel-body">
 							<form class="form form-vertical">
 								<div class="control-group">
-									<label>Proyecto</label>
-									<div class="controls">
-										<input type="text" class="form-control" name="proyecto">
-									</div>
+									<label for="" >Controlador</label>                 
+									<select class="form-control" name='usuario_id' class="col-sm-5">
+										<option value="##">Juanita</option>
+										<option value="##">Mario</option>
+									</select>
 								</div>
 
 								<div class="control-group">
-								 	<label for="" >Clientes</label> 
-								 	<div class="controls">
-										<input type="text" class="form-control" name="cliente">
-									</div>                
-								</div>						
-													
+									<label for="" >Folio</label>                 
+									<select class="form-control" name='folios' class="col-sm-5">
+										<option value="##">12238948 - 3</option>
+										<option value="##">12342255 - 2</option>
+									</select>
+								</div>					
+								<br>					
 								<div class="control-group">						
 									<div class="controls">
 										<button type="submit" class="btn btn-primary">
@@ -58,13 +59,15 @@
 					<table class="table table-striped">
 						<thead>
 							<tr>
-								<th>Proyecto</th>							
+								<th>Controlador</th>	
+								<th>Folio</th>							
 								<th>Acciones</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>							
-		                        <td> Proyecto1 </td>            
+		                        <td>Juanita</td>
+		                        <td>12238948 - 3</td>              
 								<td>
 									<a class="btn btn-warning" href="">
 										Editar
@@ -84,4 +87,3 @@
 	</div>
 </div>
 @endsection
-

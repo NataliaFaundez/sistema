@@ -1,6 +1,5 @@
-
 @extends("home")
-@section('proyecto')
+@section('asig_zonas')
 <hr>
 <div class="col-sm-9">
 	<div class="row">				               	
@@ -12,26 +11,31 @@
 						<div class="panel-heading">
 							<div class="panel-title">
 								<i class="glyphicon glyphicon-wrench pull-right"></i>
-								<h4>Agregar Proyecto</h4>
+								<h4>Asignar Zona</h4>
 							</div>
 						</div>
 			
 						<div class="panel-body">
 							<form class="form form-vertical">
 								<div class="control-group">
-									<label>Proyecto</label>
-									<div class="controls">
-										<input type="text" class="form-control" name="proyecto">
-									</div>
+									<label for="" >Usuario</label>                 
+									<select class="form-control" name='usuario_id' class="col-sm-5">
+										<option value="##">Juanita</option>
+										<option value="##">Mario</option>
+									</select>
 								</div>
 
 								<div class="control-group">
-								 	<label for="" >Clientes</label> 
-								 	<div class="controls">
-										<input type="text" class="form-control" name="cliente">
-									</div>                
-								</div>						
+									<label for="" >Zona</label>                 
+									<select class="form-control" name='usuario_id' class="col-sm-5">
+										<option value="##"> </option>
+										<option value="##"> </option>
+									</select>
+								</div>
+
+								
 													
+								<br>					
 								<div class="control-group">						
 									<div class="controls">
 										<button type="submit" class="btn btn-primary">
@@ -58,13 +62,15 @@
 					<table class="table table-striped">
 						<thead>
 							<tr>
-								<th>Proyecto</th>							
+								<th>Usuario</th>	
+								<th>Zona</th>							
 								<th>Acciones</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>							
-		                        <td> Proyecto1 </td>            
+		                        <td>Juanita</td>
+		                        <td>Metropolitana</td>               
 								<td>
 									<a class="btn btn-warning" href="">
 										Editar
@@ -84,4 +90,3 @@
 	</div>
 </div>
 @endsection
-
