@@ -47,11 +47,11 @@ Route::group(['middleware' => 'web'], function () {
     //administrador{
     //crea un progrcto, falta guardar editar
     Route::get('/administrador/proyecto', 'ProyectoController@Index');
-    Route::get("/administrador/proyecto", 'ClienteController@Index');
-    Route::post("/administrador/proyecto/save", 'ClienteController@PostGuardar');
-    Route::get("/administrador/proyecto/eliminar/{id}", 'ClienteController@Eliminar');
-    Route::get("/administrador/proyecto/editar/{id}", 'ClienteController@Editar');
-    Route::post("administrador/proyecto/editar/{id}", 'ClienteController@EditarSave');
+    Route::get("/administrador/proyecto", 'ProyectoController@Index');
+    Route::post("/administrador/proyecto/save", 'ProyectoController@PostGuardar');
+    Route::get("/administrador/proyecto/eliminar/{id}", 'ProyectoController@Eliminar');
+    Route::get("/administrador/proyecto/editar/{id}", 'ProyectoController@Editar');
+    Route::post("administrador/proyecto/editar/{id}", 'ProyectoController@EditarSave');
 
     //crea un modelo de encuesta, falta guardar editar
     Route::get('/administrador/encuestas','ModeloController@RelacionarModelo');

@@ -36,6 +36,7 @@
             @yield('asig_zonas')
             @yield('asig_folios')            
             @yield('crear_encuesta')
+            @yield('editar_zonas')
         @endif 
 
         @if (Auth::user()->rol == 'sistema')
