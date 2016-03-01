@@ -13,6 +13,13 @@ class CreateModelosTable extends Migration
     public function up()
     {
         //
+        Schema::create('modelos', function (Blueprint $table) {
+            
+            $table->increments('id');
+            $table->string('nombre');
+            $table->integer('proyecto_id');
+            $table->timestamps();
+        });    
     }
 
     /**
@@ -23,5 +30,6 @@ class CreateModelosTable extends Migration
     public function down()
     {
         //
+        Schema::drop('modelos');
     }
 }

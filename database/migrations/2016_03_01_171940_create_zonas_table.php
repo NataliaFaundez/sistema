@@ -13,6 +13,13 @@ class CreateZonasTable extends Migration
     public function up()
     {
         //
+        Schema::create('zonas', function (Blueprint $table) {
+            
+            $table->increments('id');
+            $table->string('nombre');
+            $table->integer('modelo_id');
+            $table->timestams();
+        });    
     }
 
     /**
@@ -23,5 +30,6 @@ class CreateZonasTable extends Migration
     public function down()
     {
         //
+        Schema::drop('zonas');
     }
 }

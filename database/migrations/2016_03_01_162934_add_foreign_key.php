@@ -13,11 +13,28 @@ class AddForeignKey extends Migration
     public function up()
     {
         //
+        public function up()
+    {
         Schema::table('proyectos', function($table)
         {
             $table->foreign('cliente_id')->references('id')->on('clientes'); 
         });
-
+        Schema::table('usuarios', function($table)
+        {
+            $table->foreign('cliente_id')->references('id')->on('clientes'); 
+        });
+        Schema::table('clientes', function($table)
+        {
+            $table->foreign('sistema_id')->references('id')->on('sistemas'); 
+        });
+        Schema::table('encuestas', function($table)
+        {
+            $table->foreign('modelo_id')->references('id')->on('modelos'); 
+        });
+        Schema::table('modelos', function($table)
+        {
+            $table->foreign('proyecto_id')->references('id')->on('proyectos'); 
+        });
     }
 
     /**
@@ -27,10 +44,26 @@ class AddForeignKey extends Migration
      */
     public function down()
     {
-        //
         Schema::table('proyectos', function($table)
         {
             $table->dropForeign('proyectos_cliente_id_foreign');
         });
+        Schema::table('encuestas', function($table)
+        {
+            $table->dropForeign('encuestas_modelo_id_foreign');
+        });
+        Schema::table('usuarios', function($table)
+        {
+            $table->dropForeign('usuarios_cliente_id_foreign');
+        });
+        Schema::table('clientes', function($table)
+        {
+            $table->dropForeign('clientes_sistema_id_foreign');
+        });
+        Schema::table('modelos', function($table)
+        {
+            $table->dropForeign('modelos_proyecto_id_foreign');
+        });
+
     }
 }

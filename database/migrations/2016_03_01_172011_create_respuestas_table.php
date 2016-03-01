@@ -13,6 +13,15 @@ class CreateRespuestasTable extends Migration
     public function up()
     {
         //
+        Schema::create('respuestas', function (Blueprint $table) {
+            
+            $table->increments('id');
+            $table->string('respuesta');
+            $table->date('fecha');
+            $table->integer('pregunta_id');
+            $table->integer('encuesta_id');
+            $table->timestams();
+        });    
     }
 
     /**
@@ -23,5 +32,6 @@ class CreateRespuestasTable extends Migration
     public function down()
     {
         //
+        Schema::drop('respuestas');
     }
 }

@@ -13,6 +13,14 @@ class CreateUsersHasEncuestasTable extends Migration
     public function up()
     {
         //
+        Schema::create('usershasencuestas', function (Blueprint $table) {
+            
+            $table->increments('id');
+            $table->integer('folio');
+            $table->date('fecha');
+            $table->integer('modelo_id');
+            $table->timestams();
+        });    
     }
 
     /**
@@ -23,5 +31,6 @@ class CreateUsersHasEncuestasTable extends Migration
     public function down()
     {
         //
+        Schema::drop('encuestas');
     }
 }

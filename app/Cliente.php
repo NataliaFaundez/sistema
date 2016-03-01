@@ -12,7 +12,7 @@ class Cliente extends Model
     protected $fillable = [
 
         'nombre',
-        'rut'
+        'rut',
     ];
     public function proyectos()
     {
