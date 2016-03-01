@@ -51,8 +51,8 @@
                 </ul>
             </div>
             @yield('clientes')            
-            @yield('usuarios')                       
             @yield('content')
+            @yield('usuarios')                       
         @endif
 
         @if (Auth::user()->rol == 'encuestador')

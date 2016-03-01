@@ -87,11 +87,11 @@
 	                        <td> {{ $cliente-> nombre }} </td>  
 	                        <td> {{ $cliente -> rut }} </td>  		
 							<td>
-								<a class="btn btn-warning" href="##">
+								<a class="btn btn-warning" href="/sistema/clientes/editar/{{$cliente->id}}">
 									Editar
 								<span class="glyphicon glyphicon-pencil"></span>
 								</a>
-								<a class="btn btn-danger" href="##}">
+								<a class="btn btn-danger" href="/sistema/clientes/eliminar/{{$cliente->id}}">
 									Eliminar 
 								<span class="glyphicon glyphicon-remove"></span>
 								</a>	 			

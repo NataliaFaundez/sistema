@@ -40,7 +40,7 @@ Route::group(['middleware' => 'web'], function () {
     //configuracion de clientes  
     Route::get("/sistema/clientes", 'ClienteController@Index');
     Route::post("/sistema/clientes/save", 'ClienteController@PostGuardar');
-    Route::get("//sistema/clientes/eliminar/{id}", 'ClienteController@Eliminar');
+    Route::get("/sistema/clientes/eliminar/{id}", 'ClienteController@Eliminar');
     Route::get("/sistema/clientes/editar/{id}", 'ClienteController@Editar');
     Route::post("/sistema/clientes/editar/{id}", 'ClienteController@EditarSave');
     
