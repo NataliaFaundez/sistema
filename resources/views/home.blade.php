@@ -44,14 +44,15 @@
                 <ul class="nav nav-stacked">
                     <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#userMenu">Administrar <i class="glyphicon glyphicon-chevron-down"></i></a>
                         <ul class="nav nav-stacked collapse in" id="userMenu">
-                            <li class="active"> <a href="/clientes"><i class="glyphicon glyphicon-tower"></i> Clientes</a></li>
+                            <li class="active"> <a href="/sistema/clientes"><i class="glyphicon glyphicon-tower"></i> Clientes</a></li>
                             <li><a href="/usuarios"><i class="glyphicon glyphicon-user"></i> Usuarios</a></li>    
                         </ul>
                     </li>
                 </ul>
             </div>
             @yield('clientes')            
-            @yield('usuarios')
+            @yield('usuarios')                       
+            @yield('content')
         @endif
 
         @if (Auth::user()->rol == 'encuestador')

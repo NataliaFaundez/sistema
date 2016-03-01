@@ -36,8 +36,16 @@ Route::group(['middleware' => 'web'], function () {
     Route::get("/sistema", function () {
         return view('layout.app');
     });
+    //sistema{
+    //configuracion de clientes  
+    Route::get("/sistema/clientes", 'ClienteController@Index');
+    Route::post("/sistema/clientes/save", 'ClienteController@PostGuardar');
+    Route::get("//sistema/clientes/eliminar/{id}", 'ClienteController@Eliminar');
+    Route::get("/sistema/clientes/editar/{id}", 'ClienteController@Editar');
+    Route::post("/sistema/clientes/editar/{id}", 'ClienteController@EditarSave');
+    
     //administrador{
-	//crea un progrcto, falta guardar editar
+    //crea un progrcto, falta guardar editar
     Route::get('/administrador/proyecto', 'ProyectoController@Index');
 
     //crea un modelo de encuesta, falta guardar editar
@@ -58,10 +66,7 @@ Route::group(['middleware' => 'web'], function () {
     //asigna folios a un controlador, aun no teemos un controller donde ingresar
     Route::get('/administrador/asig_folios', 'ExtraController@AsigFolio');
     //}administrador
-    //sistema{
     
-    //crea clientes
-    Route::get('/clientes','ClienteController@Index');
     
     //encuestador
     Route::get('/encuestador/ver_zona', 'ZonaController@Ver');

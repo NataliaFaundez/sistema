@@ -6,7 +6,7 @@
 <div class="col-sm-9">
 	<div class="row">
 		<div class="col-md-6">
-			<form class="form-horizontal" action="##" method="POST">
+			<form class="form-horizontal" action="/sistema/clientes/save" method="POST">
 				{{ csrf_field() }}     
 				<div class="panel">
 					<div class="panel panel-default">
@@ -29,7 +29,7 @@
 								<div class="control-group">
 									<label>Rut</label>						
 									<div class="controls">
-										<input type="text" name ='correo' class="form-control">
+										<input type="text" name ='rut' class="form-control">
 									</div>	
 								</div>	
 
@@ -44,7 +44,23 @@
 						</div>
 					</div>                       
 				</div>
-			</form>
+			@if ( isset($errors) )
+			@if (count($errors) > 0)
+
+			<div class="row">
+				<div class="col-md-offset-3 col-md-6">
+				    <div class="alert alert-info">
+				        <ul>
+				            @foreach ($errors as $error)
+				                <li>{{ $error }}</li>
+				            @endforeach
+				        </ul>
+				    </div>
+			
+			    </div>
+			</div>
+			@endif
+			@endif                
 		</div>
 
 		<div class="col-md-6">
@@ -66,9 +82,10 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td> ssdfg </td>							
-							<td> ssdfg </td> 			
+						@foreach ($clientes as $cliente)
+						<tr>								                      
+	                        <td> {{ $cliente-> nombre }} </td>  
+	                        <td> {{ $cliente -> rut }} </td>  		
 							<td>
 								<a class="btn btn-warning" href="##">
 									Editar
@@ -80,6 +97,7 @@
 								</a>	 			
 							</td>										                               
 						</tr>
+						@endforeach
 					</tbody>
 					</table>
 				</div>
