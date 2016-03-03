@@ -43,6 +43,12 @@ Route::group(['middleware' => 'web'], function () {
     Route::get("/sistema/clientes/eliminar/{id}", 'ClienteController@Eliminar');
     Route::get("/sistema/clientes/editar/{id}", 'ClienteController@Editar');
     Route::post("/sistema/clientes/editar/{id}", 'ClienteController@EditarSave');
+
+    Route::get("/sistema/usuarios", 'UsuarioController@Index');
+    Route::post("/sistema/usuarios/save", 'UsuarioController@PostGuardar');
+    Route::get("/sistema/usuarios/eliminar/{id}", 'UsuarioController@Eliminar');
+    Route::get("/sistema/usuarios/editar/{id}", 'UsuarioController@Editar');
+    Route::post("/sistema/usuarios/editar/{id}", 'UsuarioController@EditarSave');
     
     //administrador{
     //crea un progrcto, falta guardar editar
