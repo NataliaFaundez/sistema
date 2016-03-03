@@ -18,8 +18,11 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password', 60);
             $table->string('rol');
+            $table->integer("cliente_id")->unsigned()->nullable();
             $table->rememberToken();
             $table->timestamps();
+            $table->foreign('cliente_id')->references('id')->on('clientes'); 
+
         });
     }
 

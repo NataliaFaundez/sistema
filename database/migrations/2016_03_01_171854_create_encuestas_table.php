@@ -18,8 +18,10 @@ class CreateEncuestasTable extends Migration
             $table->increments('id');
             $table->integer('folio');
             $table->date('fecha');
-            $table->integer('modelo_id');
+            $table->integer('modelo_id')->unsigned();
             $table->timestamps();
+            $table->foreign('modelo_id')->references('id')->on('modelos'); 
+
         });    
     }
 

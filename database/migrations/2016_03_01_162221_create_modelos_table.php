@@ -17,8 +17,10 @@ class CreateModelosTable extends Migration
             
             $table->increments('id');
             $table->string('nombre');
-            $table->integer('proyecto_id');
+            $table->integer('proyecto_id')->unsigned();
             $table->timestamps();
+            $table->foreign('proyecto_id')->references('id')->on('proyectos'); 
+
         });    
     }
 
