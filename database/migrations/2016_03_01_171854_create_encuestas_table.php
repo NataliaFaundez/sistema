@@ -19,7 +19,7 @@ class CreateEncuestasTable extends Migration
             $table->integer('folio');
             $table->date('fecha');
             $table->integer('modelo_id');
-            $table->timestams();
+            $table->timestamps();
         });    
     }
 

@@ -12,9 +12,7 @@ class AddForeignKey extends Migration
      */
     public function up()
     {
-        //
-        public function up()
-    {
+        
         Schema::table('proyectos', function($table)
         {
             $table->foreign('cliente_id')->references('id')->on('clientes'); 

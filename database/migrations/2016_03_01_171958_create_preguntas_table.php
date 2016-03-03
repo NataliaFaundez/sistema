@@ -18,7 +18,7 @@ class CreatePreguntasTable extends Migration
             $table->increments('id');
             $table->string('pregunta');
             $table->string('modelo_id');
-            $table->timestams();
+            $table->timestamps();
         });    
     }
 

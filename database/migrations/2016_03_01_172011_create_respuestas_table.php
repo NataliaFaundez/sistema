@@ -20,7 +20,7 @@ class CreateRespuestasTable extends Migration
             $table->date('fecha');
             $table->integer('pregunta_id');
             $table->integer('encuesta_id');
-            $table->timestams();
+            $table->timestamps();
         });    
     }
 
