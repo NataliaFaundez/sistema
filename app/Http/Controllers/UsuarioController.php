@@ -53,7 +53,7 @@ class UsuarioController extends Controller
             'rol'=>'required',
             'cliente_id'=>'required|',        
         ]);            
-        ]);
+        
         if ($validator->fails())
         {
             $users = User::all();
